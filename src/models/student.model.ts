@@ -1,7 +1,3 @@
-import mongoose, { Schema, Document } from 'express';
-// Note: importing from 'express' above is a mistake, it should be 'mongoose'. 
-// I will correct this in the actual file content below.
-
 import { Schema, Document, model } from 'mongoose';
 
 export interface IStudent extends Document {

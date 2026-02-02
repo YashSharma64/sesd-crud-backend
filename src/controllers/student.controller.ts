@@ -32,7 +32,7 @@ export class StudentController {
 
   getById = async (req: Request, res: Response): Promise<void> => {
     try {
-      const student = await this.studentService.getStudentById(req.params.id);
+      const student = await this.studentService.getStudentById(req.params.id as string);
       if (!student) {
         res.status(404).json({ message: 'Student not found' });
         return;
@@ -45,7 +45,7 @@ export class StudentController {
 
   update = async (req: Request, res: Response): Promise<void> => {
     try {
-      const student = await this.studentService.updateStudent(req.params.id, req.body);
+      const student = await this.studentService.updateStudent(req.params.id as string, req.body);
       if (!student) {
         res.status(404).json({ message: 'Student not found' });
         return;
@@ -58,7 +58,7 @@ export class StudentController {
 
   delete = async (req: Request, res: Response): Promise<void> => {
     try {
-      const student = await this.studentService.deleteStudent(req.params.id);
+      const student = await this.studentService.deleteStudent(req.params.id as string);
       if (!student) {
         res.status(404).json({ message: 'Student not found' });
         return;
