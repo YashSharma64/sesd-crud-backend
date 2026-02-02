@@ -2,7 +2,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import app from './src/app';
-// import "./src/config/db"; // Database connection will be added in the next commit
+import connectDB from "./src/config/db";
+
+// Connect to Database
+connectDB();
 
 const PORT = process.env.PORT || 5000;
 
